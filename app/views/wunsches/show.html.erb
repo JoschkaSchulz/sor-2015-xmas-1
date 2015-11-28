@@ -1,4 +1,39 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @wunsch.name %>
+</p>
+
+<p>
+  <strong>Anzahl:</strong>
+  <%= @wunsch.anzahl %>
+</p>
+
+<p>
+  <strong>Geschenkt:</strong>
+  <%= @wunsch.geschenkt %>
+</p>
+
+<p>
+  <strong>Preis:</strong>
+  <%= @wunsch.preis %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @wunsch.link %>
+</p>
+
+<p>
+  <strong>Beschreibung:</strong>
+  <%= @wunsch.beschreibung %>
+</p>
+
+<p>
+  <strong>U:</strong>
+  <%= @wunsch.u_id %>
+</p>
+
 <%= link_to 'Edit', edit_wunsch_path(@wunsch) %> |
 <%= link_to 'Back', wunsches_path %>

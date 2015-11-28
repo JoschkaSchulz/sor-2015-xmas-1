@@ -8,7 +8,7 @@ class CreateWunsches < ActiveRecord::Migration
       t.string :link
       t.text :beschreibung
       t.integer :u_id
-      
+
       t.timestamps null: false
     end
   end

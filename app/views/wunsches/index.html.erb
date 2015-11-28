@@ -5,6 +5,13 @@
 <table>
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Anzahl</th>
+      <th>Geschenkt</th>
+      <th>Preis</th>
+      <th>Link</th>
+      <th>Beschreibung</th>
+      <th>U</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +19,13 @@
   <tbody>
     <% @wunsches.each do |wunsch| %>
       <tr>
+        <td><%= wunsch.name %></td>
+        <td><%= wunsch.anzahl %></td>
+        <td><%= wunsch.geschenkt %></td>
+        <td><%= wunsch.preis %></td>
+        <td><%= wunsch.link %></td>
+        <td><%= wunsch.beschreibung %></td>
+        <td><%= wunsch.u_id %></td>
         <td><%= link_to 'Show', wunsch %></td>
         <td><%= link_to 'Edit', edit_wunsch_path(wunsch) %></td>
         <td><%= link_to 'Destroy', wunsch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
