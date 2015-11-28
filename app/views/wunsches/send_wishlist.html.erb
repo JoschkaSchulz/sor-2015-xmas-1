@@ -1,10 +1,10 @@
 <%= form_for(:send_wishlist, url: send_email_wunsches_path) do |f| %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, class: "from-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>
