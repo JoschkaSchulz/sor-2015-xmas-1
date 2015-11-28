@@ -1,7 +1,7 @@
 class ExampleMailer < ActionMailer::Base
   default from: "from@example.com" #Email des Benutzers, der die Wunachliste schickt
 
-  def sample_email(user)
+  def send_email(user)
     @user = user
     mail(to: @user.email, subject: 'Sample Email')
   end
