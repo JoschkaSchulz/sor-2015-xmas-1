@@ -1,6 +1,7 @@
 class WunschesController < ApplicationController
   before_action :set_wunsch, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
+
   # GET /wunsches
   def index
     @wunsches = Wunsch.all
@@ -27,7 +28,6 @@ class WunschesController < ApplicationController
   def create
     @wunsch = Wunsch.new(wunsch_params)
     @wunsch.u_id = current_user.id
-
     if @wunsch.save
       redirect_to @wunsch, notice: 'Wunsch was successfully created.'
     else
@@ -46,11 +46,12 @@ class WunschesController < ApplicationController
 
   # DELETE /wunsches/1
   def destroy
-    unless current_user.wunsches.include?(wunsch)
+    if current_user.wunsches.include?(@wunsch)
+      @wunsch.destroy
+      redirect_to wunsches_url, notice: 'Wunsch was successfully destroyed.'
+    else
       redirect_to wunsches_path, notice: 'You can only delete your own Wunsches.'
     end
-    @wunsch.destroy
-    redirect_to wunsches_url, notice: 'Wunsch was successfully destroyed.'
   end
 
   # GET /wunsches/send_wishlist

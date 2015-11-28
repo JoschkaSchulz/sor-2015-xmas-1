@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Anzahl</th>
       <th>Geschenkt</th>
-      <th>Preis</th>
+      <th>Preis €</th>
       <th>Link</th>
       <th>Beschreibung</th>
       <th>Username</th>
@@ -28,7 +28,7 @@
         <td><%= wunsch.user.name %></td>
         <td><%= link_to 'Show', wunsch %></td>
         <td><%= link_to 'Edit', edit_wunsch_path(wunsch) %></td>
-        <td><%= link_to 'Destroy', wunsch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', wunsch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

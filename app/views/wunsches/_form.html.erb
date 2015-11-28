@@ -1,7 +1,6 @@
 <%= form_for(@wunsch) do |f| %>
   <% if @wunsch.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@wunsch.errors.count, "error") %> prohibited this wunsch from being saved:</h2>
 
       <ul>
       <% @wunsch.errors.full_messages.each do |message| %>
