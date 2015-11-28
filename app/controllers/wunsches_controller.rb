@@ -53,6 +53,6 @@ class WunschesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def wunsch_params
-      params[:wunsch]
+      params.require(:wunsch).permit(:name, :anzahl, :geschenkt, :preis, :link, :beschreibung, :u_id)
     end
 end
