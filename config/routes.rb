@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :wunsches
-  resources :wunsches
+  resources :wunsches do
+    collection do
+      get :send_wishlist #new
+      post :send_email #create sendung der mail im hintergrund
+    end
+  end
   resources :posts, only: [:index, :show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

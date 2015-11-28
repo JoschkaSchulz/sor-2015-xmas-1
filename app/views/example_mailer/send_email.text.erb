@@ -1,0 +1,9 @@
+    Hi <%= @recipient.name %>
+
+    Hier ist meine Wunschliste!
+    Kauf das!
+    <% @sender.wunsches.each do |wunsch| %> <!--Hier muss die Wunschliste stehen-->
+      <%= wunsch.name %>
+    <% end %>
+
+    Gruß <%= @sender.name %>
