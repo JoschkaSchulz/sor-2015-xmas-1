@@ -61,7 +61,8 @@ class WunschesController < ApplicationController
   def send_email
     @target = User.find_by(email_params)
     if @target.present?
-      ExampleMailer.send_email(@target).deliver
+      ExampleMailer.send_email(@target, current_user).deliver
+      redirect_to root_path, notice: "Email erfolgreich verschickt"
     else
       flash[:alert] = "Kein Benutzer gefunden"
       render :send_wishlist
