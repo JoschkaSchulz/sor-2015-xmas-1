@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   # GET /posts
   def index
-    @venue = "Students on Rails"
+    @venue = "Students hate Rails"
     @posts = Post.order(created_at: :desc).limit(10)
   end
 
