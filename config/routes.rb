@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :wunsches
   resources :posts, only: [:index, :show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
