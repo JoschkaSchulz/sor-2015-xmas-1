@@ -45,10 +45,19 @@ class WunschesController < ApplicationController
     redirect_to wunsches_url, notice: 'Wunsch was successfully destroyed.'
   end
 
+  # GET /wunsches/send_wishlist
+  def send_wishlist
+  end
+
   # Send email with wunsches to target
-  def send_email(target)
-    @target = target
-    ExampleMailer.send_email(@target).deliver
+  def send_email
+    @target = User.find_by(email_params)
+    if @target.present?
+      ExampleMailer.send_email(@target).deliver
+    else
+      flash[:alert] = "Kein Benutzer gefunden"
+      render :send_wishlist
+    end
   end
 
   private
@@ -60,5 +69,9 @@ class WunschesController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def wunsch_params
       params.require(:wunsch).permit(:name, :anzahl, :geschenkt, :preis, :link, :beschreibung, :u_id)
+    end
+
+    def email_params
+      params.require(:send_wishlist).permit(:email)
     end
 end
