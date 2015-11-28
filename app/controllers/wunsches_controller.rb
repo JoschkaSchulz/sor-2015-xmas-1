@@ -45,6 +45,7 @@ class WunschesController < ApplicationController
     redirect_to wunsches_url, notice: 'Wunsch was successfully destroyed.'
   end
 
+  # Send email with wunsches to target
   def send_email(target)
     @target = target
     ExampleMailer.send_email(@target).deliver
