@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wunsches of Users</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wunsches of User</th>
+      <td><%= @user.name %></td>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wunsches.each do |wunsch| %>
+      <tr>
+        <td><%= wunsch.name %></td>
+        <td><%= link_to 'Show', wunsch %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
