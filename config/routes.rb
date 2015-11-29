@@ -9,15 +9,16 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, only: [:index, :show]
+  resources :users, only: [:index, :show]
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :user
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'wunsches#index'
+  root 'users#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

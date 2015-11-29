@@ -1,6 +1,7 @@
 class WunschesController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :new, :edit, :destroy]
   before_action :set_wunsch, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+
   # GET /wunsches
   def index
     @wunsches = Wunsch.all
@@ -27,7 +28,9 @@ class WunschesController < ApplicationController
   def create
     @wunsch = Wunsch.new(wunsch_params)
     @wunsch.u_id = current_user.id
-
+    if  @wunsch.preis == nil
+      @wunsch.preis = 0
+    end
     if @wunsch.save
       redirect_to @wunsch, notice: 'Wunsch was successfully created.'
     else
@@ -80,7 +83,7 @@ class WunschesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wunsch
-      @wunsch = current_user.wunsches.find(params[:id])
+      @wunsch = wunsch = Wunsch.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wunsches of <%= @user.name %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Wunsches of User <%= @user.name %></th>
+      <th>Preise</th>
+      <th>Detailansicht</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wunsches.each do |wunsch| %>
+      <tr>
+        <td><%= wunsch.name %></td>
+        <td><%= wunsch.preis %></td>
+        <td><%= link_to 'Show', wunsch, class: "btn btn-default" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tr>
+    <th>Gesamt Preis</th>
+    <td><%= @prices_sum %></td>
+  </tr>
+
+</table>
+
+<%= link_to 'Back', users_path, class: "btn btn-default" %>
