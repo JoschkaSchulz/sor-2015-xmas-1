@@ -3,7 +3,7 @@ class CreateWunsches < ActiveRecord::Migration
     create_table :wunsches do |t|
       t.string :name
       t.integer :anzahl
-      t.array :geschenkt
+      t.boolean :geschenkt
       t.float :preis
       t.string :link
       t.text :beschreibung
