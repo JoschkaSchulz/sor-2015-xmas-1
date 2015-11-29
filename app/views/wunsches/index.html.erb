@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Anzahl</th>
       <th>Geschenkt</th>
-      <th>Preis €</th>
+      <th>Preis</th>
       <th>Link</th>
       <th>Beschreibung</th>
       <th>Username</th>
@@ -22,7 +22,7 @@
         <td><%= wunsch.name %></td>
         <td><%= wunsch.anzahl %></td>
         <td><%= wunsch.geschenkt %></td>
-        <td><%= wunsch.preis %></td>
+        <td><%= wunsch.preis %> €</td>
         <td><% if wunsch.link.start_with?("http")
             link = wunsch.link
             elsif wunsch.link != ""
