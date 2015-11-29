@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @wunsches = Wunsch.where(u_id:@user)
+    @prices_sum = @wunsches.inject(0){|sum, wunsch| sum + wunsch[:preis]}
   end
 
 end
