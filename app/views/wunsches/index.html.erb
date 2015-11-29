@@ -26,10 +26,10 @@
         <td><%= wunsch.link %></td>
         <td><%= wunsch.beschreibung %></td>
         <td><%= wunsch.user.name %></td>
-        <td><%= link_to 'Show', wunsch %></td>
+        <td><%= link_to 'Show', wunsch, class: "btn btn-default" %></td>
         <% if current_user == wunsch.user %>
-        <td><%= link_to 'Edit', edit_wunsch_path(wunsch) %></td>
-        <td><%= link_to 'Delete', wunsch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_wunsch_path(wunsch), class: "btn btn-default" %></td>
+        <td><%= link_to 'Delete', wunsch, class: "btn btn-default", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
