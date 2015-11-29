@@ -39,6 +39,8 @@
 <p>
   <%= link_to 'Schenken', "/add_schenker/#{@wunsch.id}", class: "btn btn-default" %>
 </p>
+<% end %>
+<% if current_user == @wunsch.user %>
 <%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-default" %>
 <% end %>
 <%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %>
