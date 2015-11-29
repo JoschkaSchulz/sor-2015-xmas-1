@@ -27,8 +27,10 @@
         <td><%= wunsch.beschreibung %></td>
         <td><%= wunsch.user.name %></td>
         <td><%= link_to 'Show', wunsch %></td>
+        <% if current_user == wunsch.user %>
         <td><%= link_to 'Edit', edit_wunsch_path(wunsch) %></td>
         <td><%= link_to 'Delete', wunsch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
