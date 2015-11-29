@@ -1,54 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @wunsch.name %>
-</p>
+<table border="0" style="width:40%">
+<tr>
+  <td><strong>Name:</strong></td>
+  <td><%= @wunsch.name %></td>
+</tr>
 
-<p>
+  <tr><td>
   <strong>Anzahl:</strong>
+  </td><td>
   <%= @wunsch.anzahl %>
-</p>
+  </td></tr>
 
-<p>
+  <tr><td>
   <strong>Geschenkt von:</strong>
+  </td><td>
   <%= @wunsch.geschenkt%>
-</p>
+  </td></tr>
 
-<p>
+  <tr><td>
   <strong>Preis:</strong>
+  </td><td>
   <%= @wunsch.preis %>
-</p>
+  </td></tr>
 
-<p>
+  <tr><td>
   <strong>Link:</strong>
+  </td><td>
   <% if @wunsch.link.start_with?("http")
     @link = @wunsch.link
     elsif @wunsch.link != ""
     @link = "http://" + @wunsch.link
     end %>
   <a href="<%= @link %>"><%= @link %></a>
-</p>
+  </td></tr>
 
-<p>
+  <tr><td>
   <strong>Beschreibung:</strong>
+  </td><td>
   <%= @wunsch.beschreibung %>
-</p>
+  </td></tr>
 
-<p>
+  <tr><td>
   <strong>Username:</strong>
+  </td><td>
   <%= @wunsch.user.name %>
-</p>
+  </td></tr>
+
 
 <% if user_signed_in? %>
-<p>
+<tr><td>
   <%= link_to 'Schenken', "/add_schenker/#{@wunsch.id}", class: "btn btn-default" %>
-</p>
-<% end %>
+<% end %></td><td>
 <% if current_user == @wunsch.user %>
 <%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-default" %>
-<% end %>
-<%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %>
-<br>
-<br>
-<%= link_to 'Back to Wunsches', wunsches_path, class: "btn btn-default" %>
+<% end %></td></tr>
+<tr>
+<td><%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %></td>
+
+<td><%= link_to 'Back to Wunsches', wunsches_path, class: "btn btn-default" %></td></tr>
+</table>
