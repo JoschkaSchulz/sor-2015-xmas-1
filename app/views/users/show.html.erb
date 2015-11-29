@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Wunsches of Users</h1>
+<h1>Listing Wunsches of <%= @user.name %></h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Wunsches of User</th>
-      <td><%= @user.name %></td>
+      <th>Wunsches of <%= @user.name %></th>
+      <td>Preis</td>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
       <tr>
         <td><%= wunsch.name %></td>
         <td><%= wunsch.preis %></td>
-        <td><%= link_to 'Show', wunsch, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Show', wunsch, class: "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
