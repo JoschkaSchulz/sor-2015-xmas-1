@@ -10,11 +10,9 @@
   <%= @wunsch.anzahl %>
 </p>
 
-<%@wunsch.geschenkt = ["LOL","HIHIHIHI", "1Pommes 1Euro"]%>
-<%test = @wunsch.geschenkt[0]%>
 <p>
-  <strong>Geschenkt:</strong>
-  <%= test%" a 2" %>
+  <strong>Geschenkt von:</strong>
+  <%= @wunsch.geschenkt%>
 </p>
 
 <p>
@@ -36,6 +34,8 @@
   <strong>Username:</strong>
   <%= @wunsch.user.name %>
 </p>
-
-<%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-primary" %> 
+<p>
+  <%= link_to 'Schenken', "/add_schenker/#{@wunsch.id}", class: "btn btn-primary" %>
+</p>
+<%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-primary" %>
 <%= link_to 'Back', wunsches_path, class: "btn btn-primary" %>

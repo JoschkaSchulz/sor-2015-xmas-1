@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get "/add_schenker/:id", to: "wunsches#add_schenker"
+
   resources :wunsches do
     collection do
       get :send_wishlist #new
