@@ -16,13 +16,8 @@ ActiveRecord::Migration.check_pending!
 class ActionController::TestCase
   include Devise::TestHelpers
 
-  around do |tests|
-    DatabaseCleaner.cleaning(&tests)
-  end
 end
 
 class ActiveSupport::TestCase
-  around do |tests|
-    DatabaseCleaner.cleaning(&tests)
-  end
+
 end
