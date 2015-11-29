@@ -10,8 +10,14 @@
       Kauf das!
       <br>
       <% @sender.wunsches.each do |wunsch| %>
-        <%= wunsch.name %> <%= wunsch.preis %><br>
+       <% preis = ""
+            if wunsch.preis > 0
+            preis = wunsch.preis.to_s + ' €' 
+            end %>
+        <%= wunsch.name %> <%= preis %><br>
       <% end %>
+      Hier gehts zu der Liste: <a href=http://sor-2015-xmas-1.herokuapp.com/users/<%= @sender.id %>>Klick mich!</a>
+      <br>
       Gruß <%= @sender.name %>
     </p>
   </body>
