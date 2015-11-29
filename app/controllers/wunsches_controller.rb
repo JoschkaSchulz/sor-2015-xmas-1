@@ -69,6 +69,17 @@ class WunschesController < ApplicationController
     end
   end
 
+  def add_schenker
+    @wunsch = Wunsch.find(params[:id])
+    if(@wunsch.geschenkt == nil)
+      @wunsch.geschenkt = current_user.name
+    else
+      @wunsch.geschenkt += " "+current_user.name
+    end
+    @wunsch.save
+    redirect_to wunsches_path, notice: "Du wurdest den Schenkern hinzugefügt"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wunsch
