@@ -21,18 +21,19 @@
   <tr><td>
   <strong>Preis:</strong>
   </td><td>
-  <%= @wunsch.preis %>
+  <%= @wunsch.preis %> €
   </td></tr>
 
   <tr><td>
   <strong>Link:</strong>
   </td><td>
   <% if @wunsch.link.start_with?("http")
-    @link = @wunsch.link
+    link = @wunsch.link
     elsif @wunsch.link != ""
-    @link = "http://" + @wunsch.link
+    link = "http://" + @wunsch.link
     end %>
-  <a href="<%= @link %>"><%= @link %></a>
+
+  <a href="<%= link %>"><%= link %></a>
   </td></tr>
 
   <tr><td>

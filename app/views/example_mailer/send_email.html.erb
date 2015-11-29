@@ -8,8 +8,9 @@
     <p>
       Hier ist meine Wunschliste!
       Kauf das!
-      <% @sender.wunsches.each do |wunsch| %> <!--Hier muss die Wunschliste stehen-->
-        <%= wunsch.name %><br>
+      <br>
+      <% @sender.wunsches.each do |wunsch| %>
+        <%= wunsch.name %> <%= wunsch.preis %><br>
       <% end %>
       Gruß <%= @sender.name %>
     </p>
