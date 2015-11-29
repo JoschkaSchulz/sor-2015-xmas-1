@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Ihr Wunsch</h1>
 <table border="0" style="width:40%">
 <tr>
   <td><strong>Name:</strong></td>
@@ -47,17 +47,15 @@
   </td><td>
   <%= @wunsch.user.name %>
   </td></tr>
-
+</table>
 
 <% if user_signed_in? %>
-<tr><td>
+
   <%= link_to 'Schenken', "/add_schenker/#{@wunsch.id}", class: "btn btn-default" %>
-<% end %></td><td>
+<% end %>
 <% if current_user == @wunsch.user %>
 <%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-default" %>
-<% end %></td></tr>
-<tr>
-<td><%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %></td>
+<% end %>
 
-<td><%= link_to 'Back to Wunsches', wunsches_path, class: "btn btn-default" %></td></tr>
-</table>
+<%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %>
+<%= link_to 'Back to Wunsches', wunsches_path, class: "btn btn-default" %>
