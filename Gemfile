@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'shareable'
 
 gem 'tzinfo-data'
 

@@ -59,3 +59,5 @@
 
 <%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %>
 <%= link_to 'Back to Wunsches', wunsches_path, class: "btn btn-default" %>
+<br> </br>
+<%= render_shareable :buttons=> ['twitter', 'linkedin'] %>
