@@ -72,7 +72,7 @@ class WunschesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wunsch
-      @wunsch = wunsch = Wunsch.find(params[:id])
+      @wunsch = Wunsch.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
