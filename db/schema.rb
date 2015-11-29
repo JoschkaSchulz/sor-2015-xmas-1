@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20151128124211) do
   create_table "wunsches", force: :cascade do |t|
     t.string   "name"
     t.integer  "anzahl"
-    t.boolean  "geschenkt"
+    t.array    "geschenkt"
     t.float    "preis"
     t.string   "link"
     t.text     "beschreibung"

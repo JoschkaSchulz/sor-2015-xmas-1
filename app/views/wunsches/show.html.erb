@@ -10,6 +10,7 @@
   <%= @wunsch.anzahl %>
 </p>
 
+<%@wunsch.geschenkt = [1,2,3]%>
 <p>
   <strong>Geschenkt:</strong>
   <%= @wunsch.geschenkt %>
@@ -31,8 +32,8 @@
 </p>
 
 <p>
-  <strong>U:</strong>
-  <%= @wunsch.u_id %>
+  <strong>Username:</strong>
+  <%= @wunsch.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_wunsch_path(@wunsch) %> |
