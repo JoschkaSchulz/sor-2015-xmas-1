@@ -22,9 +22,9 @@
 
 <p>
   <strong>Link:</strong>
-  <% if @wunsch.link != "" && @wunsch.link.start_with?("http")
+  <% if @wunsch.link.start_with?("http")
     @link = @wunsch.link
-    else
+    elsif @wunsch.link != ""
     @link = "http://" + @wunsch.link
     end %>
   <a href="<%= @link %>"><%= @link %></a>
