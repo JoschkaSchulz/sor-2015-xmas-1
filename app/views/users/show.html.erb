@@ -15,7 +15,7 @@
     <% @wunsches.each do |wunsch| %>
       <tr>
         <td><%= wunsch.name %></td>
-        <td><%= link_to 'Show', wunsch %></td>
+        <td><%= link_to 'Show', wunsch, class: "btn btn-primary" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,3 +26,5 @@
   </tr>
 
 </table>
+
+<%= link_to 'Back', users_path, class: "btn btn-default" %>
