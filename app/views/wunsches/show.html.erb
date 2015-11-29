@@ -38,4 +38,7 @@
 </p>
 
 <%= link_to 'Edit', edit_wunsch_path(@wunsch), class: "btn btn-default" %> 
-<%= link_to 'Back', wunsches_path, class: "btn btn-default" %>
+<%= link_to "Back to #{@wunsch.user.name}", @wunsch.user, class: "btn btn-default" %>
+<br>
+<br>
+<%= link_to 'Back to Wunsches', users_path, class: "btn btn-default" %>
