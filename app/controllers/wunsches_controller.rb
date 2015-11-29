@@ -70,14 +70,21 @@ class WunschesController < ApplicationController
   end
 
   def add_schenker
+    
     @wunsch = Wunsch.find(params[:id])
+    notiz = "Du bist bereits Schenker"
+
     if(@wunsch.geschenkt == nil)
       @wunsch.geschenkt = current_user.name
-    else
+      notiz = "Du wurdest den Schenkern hinzugefügt"
+    elsif(!@wunsch.geschenkt.split(",").include?(current_user.name))
       @wunsch.geschenkt += ","+current_user.name
+      notiz = "Du wurdest den Schenkern hinzugefügt"
     end
+
     @wunsch.save
-    redirect_to wunsches_path, notice: "Du wurdest den Schenkern hinzugefügt"
+    redirect_to wunsches_path, notice: notiz
+
   end
 
   private
