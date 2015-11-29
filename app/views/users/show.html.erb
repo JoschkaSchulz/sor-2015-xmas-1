@@ -16,15 +16,15 @@
     <% @wunsches.each do |wunsch| %>
       <tr>
         <td><%= wunsch.name %></td>
-        <td><%= wunsch.preis %></td>
+        <td><%= wunsch.preis %> €</td>
         <td><%= link_to 'Show', wunsch, class: "btn btn-default" %></td>
       </tr>
     <% end %>
   </tbody>
 
   <tr>
-    <th>Gesamt Preis</th>
-    <td><%= @prices_sum %></td>
+    <th>Gesamtpreis</th>
+    <td><%= @prices_sum %> €</td>
   </tr>
 
 </table>

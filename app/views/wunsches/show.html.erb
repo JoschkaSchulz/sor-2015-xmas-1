@@ -17,17 +17,17 @@
 
 <p>
   <strong>Preis:</strong>
-  <%= @wunsch.preis %>
+  <%= @wunsch.preis %> €
 </p>
 
 <p>
   <strong>Link:</strong>
   <% if @wunsch.link.start_with?("http")
-    @link = @wunsch.link
+    link = @wunsch.link
     elsif @wunsch.link != ""
-    @link = "http://" + @wunsch.link
+    link = "http://" + @wunsch.link
     end %>
-  <a href="<%= @link %>"><%= @link %></a>
+  <a href="<%= link %>"><%= link %></a>
 </p>
 
 <p>
