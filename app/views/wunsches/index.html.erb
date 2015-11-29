@@ -23,7 +23,12 @@
         <td><%= wunsch.anzahl %></td>
         <td><%= wunsch.geschenkt %></td>
         <td><%= wunsch.preis %></td>
-        <td><%= link_to wunsch.link, wunsch.link %></td>
+        <td><% if wunsch.link != "" && wunsch.link.start_with?("http")
+            @link = wunsch.link
+            else
+            @link = "http://" + wunsch.link
+            end %>
+            <a href="<%= @link %>"><%= @link %></a></td>
         <td><%= wunsch.beschreibung %></td>
         <td><%= wunsch.user.name %></td>
         <td><%= link_to 'Show', wunsch, class: "btn btn-default" %></td>
