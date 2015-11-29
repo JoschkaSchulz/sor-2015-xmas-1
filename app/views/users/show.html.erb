@@ -15,6 +15,7 @@
     <% @wunsches.each do |wunsch| %>
       <tr>
         <td><%= wunsch.name %></td>
+        <td><%= wunsch.preis %></td>
         <td><%= link_to 'Show', wunsch, class: "btn btn-primary" %></td>
       </tr>
     <% end %>
