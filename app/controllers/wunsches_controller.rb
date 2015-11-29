@@ -1,5 +1,5 @@
 class WunschesController < ApplicationController
-  before_action :authenticate_user!, only: [:show, :new, :edit, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_wunsch, only: [:show, :edit, :update, :destroy]
 
   # GET /wunsches
