@@ -74,7 +74,7 @@ class WunschesController < ApplicationController
     if(@wunsch.geschenkt == nil)
       @wunsch.geschenkt = current_user.name
     else
-      @wunsch.geschenkt += " "+current_user.name
+      @wunsch.geschenkt += ","+current_user.name
     end
     @wunsch.save
     redirect_to wunsches_path, notice: "Du wurdest den Schenkern hinzugefügt"
